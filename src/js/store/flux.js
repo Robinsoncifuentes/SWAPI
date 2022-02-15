@@ -1,44 +1,81 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+				   	people:null,
+					films:null,
+					planets: null,
+					species:null,
+					vehicle: null,
+					starship: null,
+					favorites: []	
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			getPeople:()=>{
+				fetch("https://www.swapi.tech/api/people")
+			.then(response => response.json())// entonces la respuesta de la api pasa a formato json
+			.then(objeto => {console.log(objeto)
+			setStore({
+				people: objeto.results
+			})
+			})
+			.catch(error => console.log('error', error));
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+					getStarship:()=>{
+						fetch('https://www.swapi.tech/api/starships/')
+							.then(response => response.json())
+							.then(objeto => {console.log(objeto)
+								setStore({
+										starship: objeto.results
+										})
+										})
+								.catch(error => console.log('error', error));
+
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			getVehicle:()=>{
+				fetch('https://www.swapi.tech/api/vehicles/')
+				.then(response => response.json())
+				.then(objeto =>{console.log(objeto)
+					setStore({
+						vehicle:objeto.results
+					})
+			})
+			.catch(error => console.log('error', error));
+		},
+				getFilms:()=>{
+					fetch('https://www.swapi.tech/api/films/')
+					.then(response => response.json())
+					.then(objeto =>{console.log(objeto)
+						setStore({
+							films: result.results
+					})
+				})
+				.catch(error => console.log('error',error));
+			
+			},
+			getSpecies:()=>{
+				fetch('https://www.swapi.tech/api/species/')
+				.then(response => response.json())
+				.then(specie =>{console.log(specie)
+					setStore({
+						species: specie.results
+					})
+			})
+			.catch(error => console.log('error', error));
+		},
+		getPlanets:()=>{
+			fetch('https://www.swapi.tech/api/planets/')
+			.then(response => response.json())
+			.then(planet => {console.log(planet)
+				setStore({
+					planets: planet.results
+				})
+		})
+		.catch(error => console.log('error', error));
+	},	
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
 		}
+		
 	};
 };
 
