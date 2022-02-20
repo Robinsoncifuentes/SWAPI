@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {FaHtml5 } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { Button } from "./button";
@@ -8,8 +8,9 @@ import './navbar.css';
 export const Navbar = () => {
 	const[click, setClick]=useState(false);
 	const [button, setButton]=useState(true);
-	const hancleClick=()=> setClick(!click);
-	const closeMobileMenu=()=>setClick=(false);
+
+	const handleClick= () => setClick (!click);
+	const closeMobileMenu= () => setClick(false);
 
 	const showButton=()=>{
 		if(window.innerWidth<=960){
@@ -17,7 +18,12 @@ export const Navbar = () => {
 		}else{
 			setButton(true)
 		}
-	}
+	};
+
+
+useEffect(()=>{
+	showButton()
+},[]);
 
 	window.addEventListener('resize', showButton);
 
@@ -26,10 +32,10 @@ export const Navbar = () => {
 		<nav>
 
 		<div className="navbar-container">
-			<Link to='/' className="navbar-logo">
-			  Jedi <i className="fa-light fa-jedi"></i>
+			<Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
+			   <i className="fa-light fa-jedi">Hola</i>
 			</Link>
-			<div className="menu-icon" onClick={hancleClick}>
+			<div className="menu-icon" onClick={handleClick}>
 				<i className={click ?'fa fa-times': 'fa fa-bars'}/>	
 			</div>
 				<ul className={click ?'nav-menu active':'nav-menu'}>
