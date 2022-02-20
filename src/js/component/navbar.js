@@ -33,7 +33,7 @@ useEffect(()=>{
 
 		<div className="navbar-container">
 			<Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-			   <i className="fa-light fa-jedi">Hola</i>
+			   <i className="fa-light fa-jedi"></i>
 			</Link>
 			<div className="menu-icon" onClick={handleClick}>
 				<i className={click ?'fa fa-times': 'fa fa-bars'}/>	
