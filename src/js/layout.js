@@ -10,6 +10,8 @@ import { Footer } from "./component/footer";
 import { Characters } from "./component/characters/characters";
 import { Films } from "./component/films/films";
 import { Planets } from "./component/planets/planets";
+import { Starships } from "./component/starships/starships";
+import {Vehicles} from "./component/vehicles/vehicles";
 
 //create your first component
 const Layout = () => {
@@ -28,8 +30,8 @@ const Layout = () => {
 					<Route exact path={"/species"} component={Species} />
 					<Route exact path={"/films"} component={Films} />
 					<Route exact path={"/Planets"} component={Planets} />
-					<Route exact path={"/Characters"} component={Characters} />
-					<Route exact path={"/Characters"} component={Characters} />
+					<Route exact path={"/starships"} component={Starships} />
+					<Route exact path={"/vehicles"} component={Vehicles} />
 					</Switch>
 					<Footer />
 				</ScrollToTop>

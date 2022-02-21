@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {FaHtml5 } from 'react-icons/fa';
+import { FaBars, FaTimes, FaJedi } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import './navbar.css';
@@ -29,14 +29,15 @@ useEffect(()=>{
 
 	return (
 		
-		<nav>
+		
 
 		<div className="navbar-container">
-			<Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-			   <i className="fa-light fa-jedi"></i>
+			<Link style={{border:'none'}} to='/' className="navbar-logo" onClick={closeMobileMenu}>
+			
+
 			</Link>
 			<div className="menu-icon" onClick={handleClick}>
-				<i className={click ?'fa fa-times': 'fa fa-bars'}/>	
+				{click ? <FaTimes style={{color: 'dark'}}/> : <FaBars style={{color: 'yellow'}}/>}	
 			</div>
 				<ul className={click ?'nav-menu active':'nav-menu'}>
 					<li className="nav-item">
@@ -78,7 +79,7 @@ useEffect(()=>{
 				{button &&<Button buttonStyle='btn--outline'>The Force</Button>}
 		</div>
 
-		</nav>
+		
 		
 		
 	);

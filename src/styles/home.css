@@ -1,6 +1,4 @@
-/* 
-    General Styles
-*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 
@@ -14,10 +12,20 @@ body {
 
 
 }
-.navbar-container{
-  background: #242222;
+.header__logo {
+  
+  width: 100%;
+  max-width: 400px;
 }
-.NavbarItems {
+.navbar-container{
+  text-align: center;
+  
+}
+ul, li {
+	list-style: none;
+	padding: 0;
+}
+.nav-item {
   position: relative;
 }
 
@@ -30,35 +38,50 @@ body {
   top: 80px;
   left: -100%;
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all .375s .1s;
+  background: #fedc2a url(https://upsights.fra1.digitaloceanspaces.com/fwbmatch/starwars/wireframe-tie-fighter.png) no-repeat center center fixed;
+  background: #fedc2a;
+  transform-origin: 0 0;
+  right: -25px;
+  top: 0;
+  
+  
 }
 
 .nav-menu.active {
-  background: #242222;
+  display: block;
+  margin:  0;
+  text-align: center;
+  transform: skew(-14deg);
+  top: 0;
+  bottom: 0;
   left: 0;
+  right: -25px;
   opacity: 1;
   transition: all 0.5s ease;
   z-index: 1;
+  background: #fedc2a url(https://upsights.fra1.digitaloceanspaces.com/fwbmatch/starwars/wireframe-tie-fighter.png) no-repeat center center fixed;
 }
 
 .nav-links {
-  text-align: center;
-  padding: 2rem;
-  width: 100%;
-  display: table;
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateX(-18%) skew(-14deg);
 }
 
 .nav-links:hover {
-  background-color: #fff;
+  background: #fedc2a;
   color: #242424;
   border-radius: 0;
 }
 
 .navbar-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(25%, 50%);
+  
+  border-style: none;
+  
 }
 
 .menu-icon {
@@ -69,6 +92,8 @@ body {
   transform: translate(-100%, 60%);
   font-size: 1.8rem;
   cursor: pointer;
+  z-index: 1000;
+  
 }
 
 .fa-times {
@@ -93,10 +118,11 @@ body {
 
 .nav-links-mobile:hover {
   background: #fff;
-  color: #242424;
+  color: #e7e1e1;
   transition: 250ms;
 }
 
 h1{
   color: #fff;
 }
+ 
