@@ -39,6 +39,7 @@ useEffect(()=>{
 			<div className="menu-icon" onClick={handleClick}>
 				{click ? <FaTimes style={{color: 'dark'}}/> : <FaBars style={{color: 'yellow'}}/>}	
 			</div>
+			<div className="col-sm-12 col-md-6 col-lg-4">
 				<ul className={click ?'nav-menu active':'nav-menu'}>
 					<li className="nav-item">
 					<Link to='/' className="nav-links" onClick={closeMobileMenu}>
@@ -78,6 +79,7 @@ useEffect(()=>{
 				</ul>
 				{button &&<Button buttonStyle='btn--outline'>The Force</Button>}
 		</div>
+             </div>
 
 		
 		

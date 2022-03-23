@@ -2,7 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 
-
+.hola{
+  margin:auto;
+ max-width: 800px;
+ height: 500px;
+ background: #000 url(https://wallpaperaccess.com/full/2835756.jpg);
+}
 
 body {
   font-family: 'Roboto', sans-serif;
