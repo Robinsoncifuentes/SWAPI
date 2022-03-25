@@ -4,9 +4,9 @@
 
 .hola{
   margin:auto;
- max-width: 800px;
+ max-width: 1600px;
  height: 500px;
- background: #000 url(https://wallpaperaccess.com/full/2835756.jpg);
+ background: #000 url(https://i.blogs.es/69fdcc/star-wars-saga/1366_2000.jpg);
 }
 
 body {
@@ -130,4 +130,7 @@ ul, li {
 h1{
   color: #fff;
 }
+img{
  
+  height: fit-content;
+}
